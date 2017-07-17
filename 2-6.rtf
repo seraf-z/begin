@@ -1,0 +1,65 @@
+{\rtf1\ansi\ansicpg1251\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red255\green255\blue255;\red239\green239\blue239;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 /*\cb1 \
+\cb3 6\cb1 \
+\cb3 \uc0\u1053 \u1072 \u1087 \u1080 \u1089 \u1072 \u1090 \u1100  \u1092 \u1091 \u1085 \u1082 \u1094 \u1080 \u1102 , \u1082 \u1086 \u1090 \u1086 \u1088 \u1072 \u1103  \u1074 \u1077 \u1088 \u1085 \u1077 \u1090  \u1085 \u1086 \u1074 \u1099 \u1081  \u1086 \u1073 \u1098 \u1077 \u1082 \u1090 , \u1091  \u1082 \u1086 \u1090 \u1086 \u1088 \u1086 \u1075 \u1086  \u1082 \u1083 \u1102 \u1095 \u1080  \u1089 \u1090 \u1072 \u1083 \u1080 \cb1 \
+\cb3 \uc0\u1079 \u1085 \u1072 \u1095 \u1077 \u1085 \u1080 \u1103 \u1084 \u1080 , \u1072  \u1079 \u1085 \u1072 \u1095 \u1077 \u1085 \u1080 \u1103  \u1082 \u1083 \u1102 \u1095 \u1072 \u1084 \u1080 \cb1 \
+\cb3 function invert_key_value(obj) \{\cb1 \
+\cb3 \'a0 \'a0 // your code;\cb1 \
+\cb3 \}\cb1 \
+\cb3 invert_key_value(\{red: "#FF0000", green: "#00FF00", white: "#FFFFFF"\})\cb1 \
+\cb3 // \{#00FF00: "green", #FF0000: "red", #FFFFFF: "white"\}\cb1 \
+\cb3 */\cb1 \
+\
+\
+\
+\
+\
+\
+\cb3 function invert_key_value(input)\{\cb1 \
+\cb3 \'a0 var obj = \{\};\cb1 \
+\cb3 \'a0 for (var key in input)\{\cb1 \
+\cb3 \'a0 \'a0 obj[key] = input[key];\cb1 \
+\cb3 \'a0 \}\cb1 \
+\
+\cb3 \'a0 var arrBu1 = [], arrBu2 = [];\cb1 \
+\cb3 \'a0 var i = 0;\cb1 \
+\cb3 \'a0 for (var key in obj) \{\cb1 \
+\cb3 \'a0 \'a0 arrBu1[i] = key;\cb1 \
+\cb3 \'a0 \'a0 arrBu2[i] = obj[key];\cb1 \
+\cb3 \'a0 \'a0 i++;\cb1 \
+\cb3 \'a0 \}\cb1 \
+\
+\cb3 \'a0 var obj2 = \{\};\cb1 \
+\cb3 \'a0 console.log(arrBu1);\cb1 \
+\cb3 \'a0 console.log(arrBu2);\cb1 \
+\cb3 \'a0 for ( var i = 0; i < arrBu2.length; i++) \{\cb1 \
+\cb3 \'a0 \'a0 obj2[arrBu2[i]] = arrBu1[i];\cb1 \
+\cb3 \'a0 \}\cb1 \
+\cb3 return obj2;\cb1 \
+\cb3 \}\cb1 \
+\
+\
+\cb3 var obj1 = \{red: "#FF0000", green: "#00FF00", white: "#FFFFFF"\};\cb1 \
+\
+\
+\cb3 console.log(obj1);\cb1 \
+\cb3 console.log(invert_key_value(obj1))\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 \cb1 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\fs24 \cf2 \cb4 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf2 \cb1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf2 \
+}

@@ -1,0 +1,63 @@
+{\rtf1\ansi\ansicpg1251\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 /*\
+5\
+\uc0\u1053 \u1072 \u1087 \u1080 \u1089 \u1072 \u1090 \u1100  \u1092 \u1091 \u1085 \u1082 \u1094 \u1080 \u1102 , \u1082 \u1086 \u1090 \u1086 \u1088 \u1072 \u1103  \u1074  \u1087 \u1077 \u1088 \u1077 \u1076 \u1072 \u1085 \u1085 \u1086 \u1081  \u1089 \u1090 \u1088 \u1086 \u1082 \u1077  str \u1084 \u1077 \u1085 \u1103 \u1077 \u1090  \u1089 \u1083 \u1086 \u1074 \u1086  before\
+\uc0\u1085 \u1072  \u1089 \u1083 \u1086 \u1074 \u1086  after \u1080  \u1074 \u1086 \u1079 \u1074 \u1088 \u1072 \u1097 \u1072 \u1077 \u1090  \u1085 \u1086 \u1074 \u1091 \u1102  \u1089 \u1090 \u1088 \u1086 \u1082 \u1091 .\
+\uc0\u1045 \u1089 \u1083 \u1080  \u1089 \u1083 \u1086 \u1074 \u1086  before \u1085 \u1072 \u1095 \u1080 \u1085 \u1072 \u1083 \u1086 \u1089 \u1100  \u1089  \u1079 \u1072 \u1075 \u1083 \u1072 \u1074 \u1085 \u1086 \u1081  \u1073 \u1091 \u1082 \u1074 \u1099 , \u1074 \u1089 \u1090 \u1072 \u1074 \u1083 \u1077 \u1085 \u1085 \u1086 \u1077  \u1074 \u1084 \u1077 \u1089 \u1090 \u1086 \
+\uc0\u1085 \u1077 \u1075 \u1086  \u1089 \u1083 \u1086 \u1074 \u1086  after \u1090 \u1086 \u1078 \u1077  \u1076 \u1086 \u1083 \u1078 \u1085 \u1086  \u1085 \u1072 \u1095 \u1080 \u1085 \u1072 \u1090 \u1100 \u1089 \u1103  \u1089  \u1079 \u1072 \u1075 \u1083 \u1072 \u1074 \u1085 \u1086 \u1081  \u1073 \u1091 \u1082 \u1074 \u1099 \
+function myReplace(str, before, after) \{\
+\'a0 // your code\
+\}\
+myReplace("Let us get back to more Coding", "Coding", "algorithms")\
+// "Let us get back to more Algorithms".\
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");\
+// "A quick brown fox leaped over the lazy dog"\
+\
+*/\
+\
+\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf2 function myReplace( str, before, after ) \{\
+\
+\'a0 \'a0 \'a0 var a = before[0];\'a0 \'a0 \'a0//\'a0 1\uc0\u1099 \u1081  \u1089 \u1080 \u1084 \u1074 \u1086 \u1083  before\
+\'a0 \'a0 \'a0 var b = a.toUpperCase(); // \uc0\u1076 \u1077 \u1083 \u1072 \u1077 \u1084  1\u1099 \u1081  \u1089 \u1080 \u1084 \u1074 \u1086 \u1083  \u1079 \u1072 \u1075 \u1083 \u1072 \u1074 \u1085 \u1099 \u1084 \
+\
+\'a0 \'a0 \'a0 if ( a === b ) \{\
+\'a0 \'a0 \'a0 after = after[0].toUpperCase() + after.slice(1);\
+\'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 \'a0 var arr = str.split(' ');\
+\'a0 \'a0 \'a0 for ( var i = 0; i < arr.length; i++) \{\
+\'a0 \'a0 \'a0 \'a0 if ( arr[i] === before) \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 arr[i] = after\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \'a0 \}\
+\
+\'a0 \'a0 return str = arr.join(' ')\
+\
+\'a0 \}\
+\
+\
+\
+\
+\'a0 var str1 = 'Let us get back to more Coding';\
+\'a0 var str2 = "A quick brown fox jumped over the lazy dog";\
+\'a0 var str3 = "\uc0\u1084 \u1072 \u1084 \u1072  \u1084 \u1099 \u1083 \u1072  \u1088 \u1072 \u1084 \u1091 ";\
+\
+\'a0 myReplace( str1, "Coding", "algorithms")\
+\
+\'a0console.log(str1)\
+\'a0console.log(myReplace( str1, "Coding", "algorithms"))\
+\
+\'a0console.log(str2)\
+\'a0console.log(myReplace( str2, "jumped", "leaped"))\
+\
+\'a0console.log(str3)\
+\'a0console.log(myReplace( str3, "\uc0\u1084 \u1072 \u1084 \u1072 ", "\u1055 \u1072 \u1087 \u1072 "))}
