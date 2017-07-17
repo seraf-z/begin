@@ -1,60 +1,52 @@
-{\rtf1\ansi\ansicpg1251\cocoartf1404\cocoasubrtf340
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+/*  3736
 
-\f0\fs24 \cf0 /*  3736\
-\
- * \uc0\u1044 \u1072 \u1085 \u1072  \u1089 \u1090 \u1088 \u1086 \u1082 \u1072 , \u1089 \u1086 \u1089 \u1090 \u1086 \u1103 \u1097 \u1072 \u1103  \u1080 \u1079  \u1073 \u1091 \u1082 \u1074  A-Z:\
- * "AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB"\
- * \uc0\u1053 \u1091 \u1078 \u1085 \u1086  \u1085 \u1072 \u1087 \u1080 \u1089 \u1072 \u1090 \u1100  \u1092 \u1091 \u1085 \u1082 \u1094 \u1080 \u1102  RLE, \u1082 \u1086 \u1090 \u1086 \u1088 \u1072 \u1103  \u1085 \u1072  \u1074 \u1099 \u1093 \u1086 \u1076 \u1077  \u1076 \u1072 \u1089 \u1090  \u1089 \u1090 \u1088 \u1086 \u1082 \u1091  \u1074 \u1080 \u1076 \u1072 :\
- * "A4B3C2XYZD4E3F3A6B28"\
- * \uc0\u1048  \u1089 \u1075 \u1077 \u1085 \u1077 \u1088 \u1080 \u1088 \u1091 \u1077 \u1090  \u1083 \u1102 \u1073 \u1091 \u1102  \u1086 \u1096 \u1080 \u1073 \u1082 \u1091 , \u1077 \u1089 \u1083 \u1080  \u1085 \u1072  \u1074 \u1093 \u1086 \u1076  \u1087 \u1088 \u1080 \u1096 \u1083 \u1072  \u1085 \u1077 \u1074 \u1072 \u1083 \u1080 \u1076 \u1085 \u1072 \u1103  \u1089 \u1090 \u1088 \u1086 \u1082 \u1072 .\
- *\
- * \uc0\u1055 \u1086 \u1103 \u1089 \u1085 \u1077 \u1085 \u1080 \u1077 :\
- * 1. \uc0\u1077 \u1089 \u1083 \u1080  \u1089 \u1080 \u1084 \u1074 \u1086 \u1083  \u1074 \u1089 \u1090 \u1088 \u1077 \u1095 \u1072 \u1077 \u1090 \u1089 \u1103  1 \u1088 \u1072 \u1079 , \u1086 \u1085  \u1086 \u1089 \u1090 \u1072 \u1077 \u1090 \u1089 \u1103  \u1073 \u1077 \u1079  \u1080 \u1079 \u1084 \u1077 \u1085 \u1077 \u1085 \u1080 \u1081 \
- * 2. \uc0\u1077 \u1089 \u1083 \u1080  \u1089 \u1080 \u1084 \u1074 \u1086 \u1083  \u1087 \u1086 \u1074 \u1090 \u1086 \u1088 \u1103 \u1077 \u1090 \u1089 \u1103  \u1073 \u1086 \u1083 \u1077 \u1077  1 \u1088 \u1072 \u1079 \u1072 , \u1082  \u1085 \u1077 \u1084 \u1091  \u1076 \u1086 \u1073 \u1072 \u1074 \u1083 \u1103 \u1077 \u1090 \u1089 \u1103  \u1082 \u1086 \u1083 \u1080 \u1095 \u1077 \u1089 \u1090 \u1074 \u1086  \u1087 \u1086 \u1074 \u1090 \u1086 \u1088 \u1077 \u1085 \u1080 \u1081 \
- */\
-\
-  var str = 'AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB';\
-\
-  \
-  \
-  function RLE(str) \{\
-    var arr = str.split('');\
-    \
-    if ( 'A' <= arr[0] && arr[0] <= 'Z' ) \{\
-    \
-        var counter = 0;\
-        var sum = '';\
-        var sum2 = '';\
-\
-        for (var i = 0; i < arr.length; i++)\{\
-\
-            if ( arr[i] == arr[i+1]) \{ \
-\
-                  if ( counter > 0 ) \{\
-                    sum = arr[i] + '' + counter;\
-                    counter++;  \
-                  \} else \{\
-                    sum = arr[i] + '';\
-                    counter++;\
-                  \}\
-\
-              \} else \{ \
-\
-                   if ( counter > 0) \{\
-                     counter += 1;\
-                     sum2 = sum2 + arr[i] + counter + '';\
-                     counter = 0;\
-                   \} else \{\
-                     sum2 = sum2 + arr[i] + '';\
-                     counter = 0;\}\
-              \}\
-        \}\
-     \} else \{return alert('\uc0\u1054 \u1064 \u1048 \u1041 \u1050 \u1040 ')\} \
-  return sum2;  \
-  \}          \
-  \
- console.log(RLE(str));}
+ * Дана строка, состоящая из букв A-Z:
+ * "AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+ * Нужно написать функцию RLE, которая на выходе даст строку вида:
+ * "A4B3C2XYZD4E3F3A6B28"
+ * И сгенерирует любую ошибку, если на вход пришла невалидная строка.
+ *
+ * Пояснение:
+ * 1. если символ встречается 1 раз, он остается без изменений
+ * 2. если символ повторяется более 1 раза, к нему добавляется количество повторений
+ */
+
+  var str = 'AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB';
+  
+  function RLE(str) {
+    var arr = str.split('');
+    
+    if ( 'A' <= arr[0] && arr[0] <= 'Z' ) {
+    
+        var counter = 0;
+        var sum = '';
+        var sum2 = '';
+
+        for (var i = 0; i < arr.length; i++){
+
+            if ( arr[i] == arr[i+1]) { 
+
+                  if ( counter > 0 ) {
+                    sum = arr[i] + '' + counter;
+                    counter++;  
+                  } else {
+                    sum = arr[i] + '';
+                    counter++;
+                  }
+
+              } else { 
+
+                   if ( counter > 0) {
+                     counter += 1;
+                     sum2 = sum2 + arr[i] + counter + '';
+                     counter = 0;
+                   } else {
+                     sum2 = sum2 + arr[i] + '';
+                     counter = 0;}
+              }
+        }
+     } else {return alert('ОШИБКА')} 
+  return sum2;  
+  }          
+  
+ console.log(RLE(str));
